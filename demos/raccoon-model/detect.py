@@ -10,7 +10,7 @@ green = (0, 255, 0)
 label = "Raccoon"
 
 # get the list of all the images in the test folder
-images_list = glob.glob("Raccoon/test/*.jpg")
+images_list = glob.glob("demos/raccoon-model/Raccoon/test/*.jpg")
 
 for image_path in images_list:
     image = cv2.imread(image_path)
@@ -20,8 +20,8 @@ for image_path in images_list:
     w = image.shape[1]
         
     # load the configuration and weights files from disk
-    yolo_config = "yolov4-tiny-custom-raccoon.cfg"
-    yolo_weights = "yolov4-tiny-custom-raccoon_final.weights"
+    yolo_config = "demos/raccoon-model/yolov4-tiny-custom-raccoon.cfg"
+    yolo_weights = "demos/raccoon-model/yolov4-tiny-custom-raccoon_final.weights"
 
     # load the YOLOv4 network pre-trained on our raccoon dataset
     net = cv2.dnn.readNetFromDarknet(yolo_config, yolo_weights)
